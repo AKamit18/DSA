@@ -5,6 +5,20 @@ class Solution {
             return false;
         }
 
+        int[] count = new int[26];
+
+        for(int i=0;i<s.length();i++) {
+            count[s.charAt(i)-'a']++;
+            count[t.charAt(i)-'a']--;
+        }
+
+        for(int counts: count) {
+            if(counts != 0) {
+                return false;
+            }
+        }
+        return true;
+
         // char[] sArray = s.toCharArray();
         // char[] tArray = t.toCharArray();
 
@@ -20,21 +34,21 @@ class Solution {
 
 
 
-        int[] arr = new int[26];
+        // int[] arr = new int[26];
 
-        for( int i =0; i<s.length();i++){
-            arr[s.charAt(i) - 'a']++;
-        }
+        // for( int i =0; i<s.length();i++){
+        //     arr[s.charAt(i) - 'a']++;
+        // }
 
-        for( int i=0;i<t.length();i++) {
-            arr[t.charAt(i) - 'a']--;
+        // for( int i=0;i<t.length();i++) {
+        //     arr[t.charAt(i) - 'a']--;
 
-            if(arr[t.charAt(i) - 'a'] < 0) {
-                return false;
-            }
-        }
+        //     if(arr[t.charAt(i) - 'a'] < 0) {
+        //         return false;
+        //     }
+        // }
 
-        return true;
+        // return true;
 
         // boolean flag = true;
         // for(int i=0;i<arr.length; i++) {
@@ -45,7 +59,6 @@ class Solution {
 
         // return flag;
         
-
         
     }
 }
